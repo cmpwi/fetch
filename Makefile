@@ -1,6 +1,4 @@
 
-# Remove CC once OpenBSD 7.8 is released with native support for C23.
-CC = clang-19
 CFLAGS = -std=c23 -Wall -Werror -O3
 
 SRCS = fetch.c
