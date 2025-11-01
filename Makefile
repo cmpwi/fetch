@@ -1,12 +1,12 @@
 
-CFLAGS = -std=c23 -Wall -Werror -O3
+CFLAGS = -std=c23 -Wall -Werror -Os
 
 SRCS = fetch.c
 OBJS = ${SRCS:S/.c/.o/g}
 OBJDIR = obj
 TARGET = fetch
 
-all: fetch
+all: ${TARGET}
 
 obj:
 	mkdir -p ${OBJDIR}
@@ -14,7 +14,7 @@ obj:
 .c.o:
 	${CC} ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
 
-fetch: ${OBJS}
+${TARGET}: ${OBJS}
 	${CC} -o ${.TARGET} ${OBJS}
 
 .PHONY: all
