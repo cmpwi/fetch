@@ -27,8 +27,8 @@
 void
 printUserData(void)
 {
-	struct passwd *	pw = nullptr;
-	char		hostname[HOST_NAME_MAX + 1] = { 0 };
+	struct passwd *pw = nullptr;
+	char hostname[HOST_NAME_MAX + 1] = { 0 };
 
 	if ((pw = getpwuid(getuid())) == nullptr)
 		errx(1, "getpwnam");
@@ -58,10 +58,8 @@ void
 printHostData(void)
 {
 	int	mib[2] = { CTL_HW, HW_VENDOR };
-	char	*hwVendor = nullptr,
-		*hwProduct = nullptr;
-	long	hwVendorLength = 0,
-		hwProductLength = 0;
+	char	*hwVendor = nullptr, *hwProduct = nullptr;
+	long	hwVendorLength = 0, hwProductLength = 0;
 
 	if (sysctl(mib, 2, nullptr, &hwVendorLength, nullptr, 0) == -1)
 		err(1, "sysctl");
@@ -100,7 +98,7 @@ printUptimeData(void)
 	struct timespec	boottime;
 	time_t		uptime;
 	int		timeVals[4] = { 0 };
-        const char *	timeNames[] = {"days", "hours", "minutes", "seconds"};
+        const char	*timeNames[] = {"days", "hours", "minutes", "seconds"};
 	bool didPrint = false;
 
 	if (clock_gettime(CLOCK_BOOTTIME, &boottime) == -1)
