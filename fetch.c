@@ -242,13 +242,13 @@ main(void)
 
 	/* -----BEGIN FISH----- */
 
-	 puts("      _____");
+	  puts("      _____");
 	printf("    \\-     -/\t\t%s\n", userData);
 	printf(" \\_/         \\\t\t%s\n", systemData);
 	printf(" |        O O |\t\t%s\n", hostData);
 	printf(" |_  <   )  3 )\t\t%s\n", uptimeData);
 	printf(" / \\         /\t\t%s\n", memoryData);
-	printf("    /-_____-\\\n\n");
+	  puts("    /-_____-\\\n");
 
 	/* -----END FISH----- */
 
